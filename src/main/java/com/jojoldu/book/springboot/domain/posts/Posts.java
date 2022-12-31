@@ -1,4 +1,5 @@
 package com.jojoldu.book.springboot.domain.posts;
+import com.jojoldu.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,7 @@ import javax.persistence.Id;
 @Getter // 클래스 내 모든 필드의 Getter 메소드를 자동 생성
 @NoArgsConstructor //기본 생성자 자동 추가 , public Posts(){}와 같은 효과
 @Entity  //테이블과 링크될 클래스임을 명시 , 카멜 케이스 이름을 -> 언더스코어 네이밍으로 매칭 ,Setter 메소드는 만들지 않는다.
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     @Id //해당 테이블의 PK 필드
     @GeneratedValue(strategy = GenerationType.IDENTITY) //PK의 생성 규칙 , 스프링 부트 2.0에서는 GenerationType.IDENTITY 옵션 추가해야만 auto_increment 됨
